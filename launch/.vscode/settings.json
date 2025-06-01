@@ -1,0 +1,42 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/yumin5660/ros2_ws/build/robot_description",
+        "/home/yumin5660/ros2_ws/install/robot_description/lib/python3.10/site-packages",
+        "/home/yumin5660/ros2_ws/build/qos_test",
+        "/home/yumin5660/ros2_ws/install/qos_test/lib/python3.10/site-packages",
+        "/home/yumin5660/ros2_ws/build/pose_practice",
+        "/home/yumin5660/ros2_ws/install/pose_practice/lib/python3.10/site-packages",
+        "/home/yumin5660/ros2_ws/build/play_bagfiles",
+        "/home/yumin5660/ros2_ws/install/play_bagfiles/lib/python3.10/site-packages",
+        "/home/yumin5660/ros2_ws/build/my_turtle_controller",
+        "/home/yumin5660/ros2_ws/install/my_turtle_controller/lib/python3.10/site-packages",
+        "/home/yumin5660/ros2_ws/build/midterm",
+        "/home/yumin5660/ros2_ws/install/midterm/lib/python3.10/site-packages",
+        "/home/yumin5660/ros2_ws/build/final_project",
+        "/home/yumin5660/ros2_ws/install/final_project/lib/python3.10/site-packages",
+        "/home/yumin5660/ros2_ws/install/autoware_sensing_msgs/local/lib/python3.10/dist-packages",
+        "/home/yumin5660/ros2_ws/install/applanix_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/yumin5660/ros2_ws/build/robot_description",
+        "/home/yumin5660/ros2_ws/install/robot_description/lib/python3.10/site-packages",
+        "/home/yumin5660/ros2_ws/build/qos_test",
+        "/home/yumin5660/ros2_ws/install/qos_test/lib/python3.10/site-packages",
+        "/home/yumin5660/ros2_ws/build/pose_practice",
+        "/home/yumin5660/ros2_ws/install/pose_practice/lib/python3.10/site-packages",
+        "/home/yumin5660/ros2_ws/build/play_bagfiles",
+        "/home/yumin5660/ros2_ws/install/play_bagfiles/lib/python3.10/site-packages",
+        "/home/yumin5660/ros2_ws/build/my_turtle_controller",
+        "/home/yumin5660/ros2_ws/install/my_turtle_controller/lib/python3.10/site-packages",
+        "/home/yumin5660/ros2_ws/build/midterm",
+        "/home/yumin5660/ros2_ws/install/midterm/lib/python3.10/site-packages",
+        "/home/yumin5660/ros2_ws/build/final_project",
+        "/home/yumin5660/ros2_ws/install/final_project/lib/python3.10/site-packages",
+        "/home/yumin5660/ros2_ws/install/autoware_sensing_msgs/local/lib/python3.10/dist-packages",
+        "/home/yumin5660/ros2_ws/install/applanix_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}
