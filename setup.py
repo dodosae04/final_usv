@@ -23,7 +23,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "vel_pub = final_project.vel_pub:main",
+            "obstacle = final_project.obstacle:main",
         ],
     },
 )
