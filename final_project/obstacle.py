@@ -81,9 +81,9 @@ class RedCircleAvoider(Node):
             if time.time() - self.avoid_start_time < 1.5:
                 msg_L.data = -5.0  # 좌회전
                 msg_R.data = 5.0
-            elif time.time() - self.avoid_start_time < 4.5:
-                msg_L.data =  4.0  # 좌회전
-                msg_R.data = 1.0
+            elif time.time() - self.avoid_start_time < 2.5:
+                msg_L.data =  10.0  # 좌회전
+                msg_R.data = 0.0
             else:
                 self.avoid_mode = False
                 msg_L.data = 5.0
