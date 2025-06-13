@@ -18,6 +18,8 @@ setup(
             glob(os.path.join('worlds', '*.sdf'))),
         (os.path.join('share', package_name, 'models', 'box_usv'),
             glob(os.path.join('models', 'box_usv', '*'))),
+        (os.path.join('share', package_name, 'env-hooks'),
+            ['env-hooks/gz_sim_resource_path.sh']),
         (os.path.join('lib', package_name),
             glob(os.path.join('scripts', '*.py'))),
     ],
