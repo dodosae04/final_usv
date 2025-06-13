@@ -56,7 +56,164 @@
                 </inertial>
             </link>
         </model>
+
+
+        <model name="red_sphere2">
+            <pose>5 -5 0.3 0 0 0</pose>
+            <static>true</static>
+            <link name="link">
+                <visual name="visual">
+                    <geometry>
+                        <sphere>
+                            <radius>0.2</radius>
+                        </sphere>
+                    </geometry>
+                    <material>
+                        <ambient>1 0 0 1</ambient>
+                        <diffuse>1 0 0 1</diffuse>
+                        <specular>1 0 0 1</specular>
+                    </material>
+                </visual>
+                <collision name="collision">
+                    <geometry>
+                        <sphere>
+                            <radius>0.4</radius>
+                        </sphere>
+                    </geometry>
+                </collision>
+                <inertial>
+                    <mass>1.0</mass>
+                    <inertia>
+                        <ixx>0.001</ixx>
+                        <ixy>0.0</ixy>
+                        <ixz>0.0</ixz>
+                        <iyy>0.001</iyy>
+                        <iyz>0.0</iyz>
+                        <izz>0.001</izz>
+                    </inertia>
+                </inertial>
+            </link>
+        </model>
+
+        <model name="red_sphere3">
+            <pose>2 5 0.3 0 0 0</pose>
+            <static>true</static>
+            <link name="link">
+                <visual name="visual">
+                    <geometry>
+                        <sphere>
+                            <radius>0.2</radius>
+                        </sphere>
+                    </geometry>
+                    <material>
+                        <ambient>1 0 0 1</ambient>
+                        <diffuse>1 0 0 1</diffuse>
+                        <specular>1 0 0 1</specular>
+                    </material>
+                </visual>
+                <collision name="collision">
+                    <geometry>
+                        <sphere>
+                            <radius>0.4</radius>
+                        </sphere>
+                    </geometry>
+                </collision>
+                <inertial>
+                    <mass>1.0</mass>
+                    <inertia>
+                        <ixx>0.001</ixx>
+                        <ixy>0.0</ixy>
+                        <ixz>0.0</ixz>
+                        <iyy>0.001</iyy>
+                        <iyz>0.0</iyz>
+                        <izz>0.001</izz>
+                    </inertia>
+                </inertial>
+            </link>
+        </model>
                 
+
+
+
+       <model name="red_sphere4">
+            <pose>4 4 0.3 0 0 0</pose>
+            <static>true</static>
+            <link name="link">
+                <visual name="visual">
+                    <geometry>
+                        <sphere>
+                            <radius>0.2</radius>
+                        </sphere>
+                    </geometry>
+                    <material>
+                        <ambient>1 0 0 1</ambient>
+                        <diffuse>1 0 0 1</diffuse>
+                        <specular>1 0 0 1</specular>
+                    </material>
+                </visual>
+                <collision name="collision">
+                    <geometry>
+                        <sphere>
+                            <radius>0.4</radius>
+                        </sphere>
+                    </geometry>
+                </collision>
+                <inertial>
+                    <mass>1.0</mass>
+                    <inertia>
+                        <ixx>0.001</ixx>
+                        <ixy>0.0</ixy>
+                        <ixz>0.0</ixz>
+                        <iyy>0.001</iyy>
+                        <iyz>0.0</iyz>
+                        <izz>0.001</izz>
+                    </inertia>
+                </inertial>
+            </link>
+        </model>
+
+
+
+
+        <model name="red_sphere5">
+            <pose>8 -3 0.3 0 0 0</pose>
+            <static>true</static>
+            <link name="link">
+                <visual name="visual">
+                    <geometry>
+                        <sphere>
+                            <radius>0.2</radius>
+                        </sphere>
+                    </geometry>
+                    <material>
+                        <ambient>1 0 0 1</ambient>
+                        <diffuse>1 0 0 1</diffuse>
+                        <specular>1 0 0 1</specular>
+                    </material>
+                </visual>
+                <collision name="collision">
+                    <geometry>
+                        <sphere>
+                            <radius>0.4</radius>
+                        </sphere>
+                    </geometry>
+                </collision>
+                <inertial>
+                    <mass>1.0</mass>
+                    <inertia>
+                        <ixx>0.001</ixx>
+                        <ixy>0.0</ixy>
+                        <ixz>0.0</ixz>
+                        <iyy>0.001</iyy>
+                        <iyz>0.0</iyz>
+                        <izz>0.001</izz>
+                    </inertia>
+                </inertial>
+            </link>
+        </model>
+
+
+
         <scene>
             <ambient>0.0 1.0 1.0</ambient>
             <background>0 0.7 0.8</background>
