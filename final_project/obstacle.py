@@ -5,7 +5,6 @@ from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 import cv2
 import numpy as np
-import time
 
 class RedCircleAvoider(Node):
     def __init__(self):
@@ -15,7 +14,6 @@ class RedCircleAvoider(Node):
         # 퍼블리셔 설정
         self.thrust_L_pub = self.create_publisher(Float64, '/box_usv/thruster_L', 10)
         self.thrust_R_pub = self.create_publisher(Float64, '/box_usv/thruster_R', 10)
-        self.left=0
 
         # 카메라 이미지 구독
         self.image_sub = self.create_subscription(
@@ -37,17 +35,53 @@ class RedCircleAvoider(Node):
         self.latest_image = cv_image.copy()
 
 
-        # OpenCV 창으로 이미지 띄우기
-        cv2.imshow("Camera View", cv_image)
-        cv2.waitKey(1)
-        self.control_loop()
+        # 장애물 회피 로직 실행
+        self.control_loop(cv_image)
 
-    def control_loop(self):
+    def control_loop(self, image):
         msg_L = Float64()
         msg_R = Float64()
 
-        msg_L.data = 5.0
-        msg_R.data = 5.0
+        # 이미지에서 빨간색 영역 검출
+        hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+        lower_red1 = np.array([0, 120, 70])
+        upper_red1 = np.array([10, 255, 255])
+        lower_red2 = np.array([170, 120, 70])
+        upper_red2 = np.array([180, 255, 255])
+        mask1 = cv2.inRange(hsv, lower_red1, upper_red1)
+        mask2 = cv2.inRange(hsv, lower_red2, upper_red2)
+        mask = cv2.bitwise_or(mask1, mask2)
+
+        contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+        width = image.shape[1]
+
+        # 장애물이 발견되면 위치에 따라 속도를 조절
+        if contours:
+            largest = max(contours, key=cv2.contourArea)
+            area = cv2.contourArea(largest)
+            M = cv2.moments(largest)
+            cx = int(M['m10'] / M['m00']) if M['m00'] != 0 else width // 2
+
+            if area > 200:
+                if cx < width * 0.4:
+                    # 장애물이 왼쪽에 있을 때 우회전
+                    msg_L.data = 3.0
+                    msg_R.data = 6.0
+                elif cx > width * 0.6:
+                    # 장애물이 오른쪽에 있을 때 좌회전
+                    msg_L.data = 6.0
+                    msg_R.data = 3.0
+                else:
+                    # 정면에 있을 때 제자리 회전
+                    msg_L.data = -3.0
+                    msg_R.data = 3.0
+            else:
+                msg_L.data = 5.0
+                msg_R.data = 5.0
+        else:
+            msg_L.data = 5.0
+            msg_R.data = 5.0
 
         self.thrust_L_pub.publish(msg_L)
         self.thrust_R_pub.publish(msg_R)
